@@ -22,5 +22,4 @@ app.get '/', (req, res) ->
 app.get '/music', (req, res) ->
   request 'http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=xAdInfinitum&api_key=2cabf97750ff23554d8c8a8140f7bcd6&format=json', (err, response, body) ->
     data = JSON.parse body
-    console.log data
     res.render 'music', data
