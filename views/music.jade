@@ -8,3 +8,4 @@ html
     ul    
       each artist in topartists.artist
         li #{artist.playcount} - #{artist.name}
+        img(src=artist.image[2]['#text'])
