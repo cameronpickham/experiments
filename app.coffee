@@ -1,4 +1,4 @@
-PORT = 3000
+PORT = 4000
 
 request = require 'request'
 express = require 'express'
@@ -7,6 +7,10 @@ app = express()
 app.set 'views', __dirname + '/views'
 app.set 'view engine', 'jade'
 
+app.use express.bodyParser()
+app.use express.methodOverride()
+app.use express.logger("dev")
+app.use app.router
 app.use(express.static(__dirname+'/static'))
 
 app.listen PORT, ->
